@@ -1,6 +1,6 @@
 import { formatPrice } from "../utils/format";
 
-const Navbar = ({ onRegisterClick }) => {
+const Navbar = ({ onRegisterClick, onLoginClick }) => {
   const total = 25000;
   const token = false;
 
@@ -19,7 +19,9 @@ const Navbar = ({ onRegisterClick }) => {
             </>
           ) : (
             <>
-              <button className="btn btn-outline-light mx-1">🔐 Login</button>
+              <button className="btn btn-outline-light mx-1" onClick={onLoginClick}>
+                🔐 Login
+              </button>
               <button className="btn btn-outline-light mx-1" onClick={onRegisterClick}>
                 🔐 Register
               </button>
@@ -36,5 +38,6 @@ const Navbar = ({ onRegisterClick }) => {
 };
 
 export default Navbar;
+
 
 
