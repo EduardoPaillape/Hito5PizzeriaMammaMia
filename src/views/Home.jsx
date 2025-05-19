@@ -1,15 +1,24 @@
-import Header from "../components/Header";
-import CardPizza from "../components/CardPizza";
-import pizzas from "../data/pizzas";
+import { useEffect, useState } from "react";
+import Header from "./Header";
+import CardPizza from "./CardPizza";
 
 const Home = () => {
+  const [pizzas, setPizzas] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/api/pizzas")
+      .then((res) => res.json())
+      .then((data) => setPizzas(data))
+      .catch((err) => console.error("Error al cargar pizzas:", err));
+  }, []);
+
   return (
     <div className="container my-5">
       <Header />
       <div className="d-flex flex-wrap justify-content-center">
-        {pizzas.map((pizza, index) => (
+        {pizzas.map((pizza) => (
           <CardPizza
-            key={index}
+            key={pizza.id}
             name={pizza.name}
             price={pizza.price}
             ingredients={pizza.ingredients}

@@ -1,22 +1,23 @@
-import Navbar from "./components/navbar";
 import Footer from "./components/Footer";
-// import Home from "./views/Home";
-import Cart from "./components/Cart";
-// import RegisterPage from "./views/RegisterPage";
-// import LoginPage from "./views/LoginPage";
+import Navbar from "./components/Navbar";
+import Pizza from "./components/Pizza";
+// import Home from "./components/Home";
+// import Cart from "./components/Cart";
+// import LoginPage from "./components/Login";
+// import RegisterPage from "./components/Register";
 
-function App() {
+const App = () => {
   return (
-    <>
+    <div>
       <Navbar />
-      {/* <Home /> */}
-      <Cart />
+      <Pizza />
       <Footer />
-    </>
+    </div>
   );
-}
+};
 
 export default App;
+
 
 
 
