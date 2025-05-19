@@ -1,37 +1,34 @@
+import { Link } from "react-router-dom";
 import { formatPrice } from "../utils/format";
 
-const Navbar = ({ onRegisterClick, onLoginClick }) => {
+const Navbar = () => {
   const total = 25000;
-  const token = false;
+  const token = false; // Más adelante lo vincularemos con autenticación real
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark px-3">
-      <span className="navbar-brand">🍕 PizzaApp</span>
+      <Link to="/" className="navbar-brand">🍕 PizzaApp</Link>
 
       <div className="collapse navbar-collapse d-flex justify-content-between w-100">
         <div className="navbar-nav">
-          <button className="btn btn-outline-light mx-1">🍕 Home</button>
+          <Link to="/" className="btn btn-outline-light mx-1">🍕 Home</Link>
 
           {token ? (
             <>
-              <button className="btn btn-outline-light mx-1">🔓 Profile</button>
+              <Link to="/profile" className="btn btn-outline-light mx-1">🔓 Profile</Link>
               <button className="btn btn-outline-light mx-1">🔒 Logout</button>
             </>
           ) : (
             <>
-              <button className="btn btn-outline-light mx-1" onClick={onLoginClick}>
-                🔐 Login
-              </button>
-              <button className="btn btn-outline-light mx-1" onClick={onRegisterClick}>
-                🔐 Register
-              </button>
+              <Link to="/login" className="btn btn-outline-light mx-1">🔐 Login</Link>
+              <Link to="/register" className="btn btn-outline-light mx-1">🔐 Register</Link>
             </>
           )}
         </div>
 
-        <button className="btn btn-success">
+        <Link to="/cart" className="btn btn-success">
           🛒 Total: ${formatPrice(total)}
-        </button>
+        </Link>
       </div>
     </nav>
   );
