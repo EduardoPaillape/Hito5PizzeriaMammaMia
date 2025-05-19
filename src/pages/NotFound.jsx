@@ -1,4 +1,4 @@
-// src/pages/NotFound.jsx
+
 const NotFound = () => {
   return (
     <div>
@@ -8,4 +8,4 @@ const NotFound = () => {
   );
 };
 
-export default NotFound; // ✅ Esto es clave
+export default NotFound; 

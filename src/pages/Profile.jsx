@@ -1,4 +1,4 @@
-// src/pages/Profile.jsx
+
 const Profile = () => {
   return (
     <div>
@@ -9,4 +9,4 @@ const Profile = () => {
   );
 };
 
-export default Profile; // ✅ Exportación por defecto
+export default Profile; 

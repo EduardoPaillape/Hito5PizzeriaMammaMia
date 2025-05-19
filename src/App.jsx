@@ -11,7 +11,7 @@ import NotFound from "./pages/NotFound";
 function App() {
   return (
     <Router>
-      <Navbar /> {/* Componente común a todas las rutas */}
+      <Navbar /> {}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
@@ -19,7 +19,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/pizza/:id" element={<Pizza />} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="*" element={<NotFound />} /> {/* Ruta 404 */}
+        <Route path="*" element={<NotFound />} /> {}
       </Routes>
     </Router>
   );
